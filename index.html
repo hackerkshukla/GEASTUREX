@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestureLearn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>GestureLearn</h1>
+        <div id="connection-status" class="status disconnected">
+            Backend: Disconnected
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="camera-card card">
+            <div class="camera-heading">
+                <h2>Camera</h2>
+                <span id="camera-status">Starting camera...</span>
+            </div>
+
+            <div class="camera-container">
+                <video id="webcam" autoplay playsinline muted></video>
+                <canvas id="output-canvas"></canvas>
+                <div id="camera-error" class="camera-error"></div>
+            </div>
+        </section>
+
+        <aside class="side-panel">
+            <section class="card">
+                <h2>Active Gesture</h2>
+                <div id="gesture-display">NO HAND</div>
+            </section>
+
+            <section class="card metrics">
+                <h2>System Metrics</h2>
+                <p>FPS <strong id="fps-val">0</strong></p>
+                <p>Landmarks <strong id="landmark-count">0 / 21</strong></p>
+                <p id="powerpoint-status" class="powerpoint-status">
+                    PowerPoint: waiting
+                </p>
+            </section>
+
+            <section class="card workspace-card">
+                <h2>Learning Workspace</h2>
+                <div id="workspace-content">
+                    <h3 id="slide-title">Welcome to Smart Learning</h3>
+                    <p id="slide-text">Use hand gestures or the buttons to control your learning experience.</p>
+
+                    <div class="learning-controls">
+                        <button id="prev-btn" type="button">⬅ Previous</button>
+                        <button id="play-btn" type="button">▶ Play</button>
+                        <button id="pause-btn" type="button">⏸ Pause</button>
+                        <button id="next-btn" type="button">Next ➡</button>
+                    </div>
+
+                    <p class="slide-counter">
+                        Slide <span id="slide-number">1</span> /
+                        <span id="total-slides">4</span>
+                    </p>
+                </div>
+            </section>
+        </aside>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
